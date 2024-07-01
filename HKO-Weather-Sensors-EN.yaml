@@ -1,0 +1,201 @@
+# Place the below sections into your configuration.yaml file in Home Assistant to add a bunch of sensors that
+# fetches the latest weather forecast and warning information from Hong Kong Observatory via their official API, in English.
+# Information fetched will be stored as individual sensors in Home Assistant, 
+# so that you can leverage them for your dashboards and automations.
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=en
+    sensor:
+      - name: "HKO Current Warnings - English"
+        unique_id: sensor.hko_current_warnings_en
+        value_template: >
+          {% for value in value_json %} 
+            {% if value_json[value].type is defined and not empty %}
+              {{value_json[value].type ~ ' ' ~ value_json[value].name ~ ' '}}
+            {% else %}
+              {{value_json[value].name ~ ' '}}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$..*"
+        json_attributes:
+          - name
+          - type
+
+      - name: "HKO Current Warnings - Code - English"
+        unique_id: sensor.hko_current_warnings_code_en
+        value_template: "{% for value in value_json %}{{value_json[value].code}}{% endfor %}"
+        json_attributes_path: "$..*"
+        json_attributes:
+          - code
+
+      - name: "HKO Current Warnings - Action Code - ENglish"
+        unique_id: sensor.hko_current_warnings_action_code_en
+        value_template: "{% for value in value_json %}{{value_json[value].actionCode}}{% endfor %}"
+        json_attributes_path: "$..*"
+        json_attributes:
+          - actionCode
+
+      - name: "HKO Current Warnings - Issue Time - English"
+        unique_id: sensor.hko_current_warnings_issue_time_en
+        value_template: "{% for value in value_json %}{{value_json[value].issueTime}}{% endfor %}"
+        json_attributes_path: "$..*"
+        json_attributes:
+          - issueTime
+
+      - name: "HKO Current Warnings - Update Time - English"
+        unique_id: sensor.hko_current_warnings_update_time_en
+        value_template: "{% for value in value_json %}{{value_json[value].updateTime}}{% endfor %}"
+        json_attributes_path: "$..*"
+        json_attributes:
+          - updateTime
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=en
+    sensor:
+      - name: "HKO Weather Forecast - General Situation - English"
+        unique_id: sensor.hko_weather_forecast_general_situation_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'generalSituation' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - generalSituation
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=en
+    sensor:
+      - name: "HKO Weather Forecast - Tropical Cyclone - English"
+        unique_id: sensor.hko_weather_forecast_tropical_cyclone_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'tcInfo' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - tcInfo
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=en
+    sensor:
+      - name: "HKO Weather Forecast - Fire Danger Warning - English"
+        unique_id: sensor.hko_weather_forecast_fire_danger_warning_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'fireDangerWarning' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - fireDangerWarning
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=en
+    sensor:
+      - name: "HKO Weather Forecast - Forecast Period - English"
+        unique_id: sensor.hko_weather_forecast_forecast_period_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'forecastPeriod' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - forecastPeriod
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=en
+    sensor:
+      - name: "HKO Weather Forecast - Forecast Description - English"
+        unique_id: sensor.hko_weather_forecast_forecast_description_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'forecastDesc' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - forecastDesc
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=en
+    sensor:
+      - name: "HKO Weather Forecast - Outlook - English"
+        unique_id: sensor.hko_weather_forecast_outlook_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'outlook' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - outlook
+
+      - name: "HKO Weather Forecast - Update Time - English"
+        unique_id: sensor.hko_weather_forecast_update_time_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == 'updateTime' %}
+              {{ value_json[value] }}
+            {% endif %}
+          {% endfor %}
+        json_attributes_path: "$*"
+        json_attributes:
+          - updateTime
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warninginfo&lang=en
+    sensor:
+      - name: "HKO - Weather Warning Info 0 - English"
+        unique_id: sensor.hko_weather_warning_info_0_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == "contents" %}
+              {{ value_json[value] }}
+            {% endif %}            
+          {% endfor %}
+        json_attributes_path: "$[details][0]"
+        json_attributes:
+          - contents
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warninginfo&lang=en
+    sensor:
+      - name: "HKO - Weather Warning Info 1 - English"
+        unique_id: sensor.hko_weather_warning_info_1_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == "contents" %}
+              {{ value_json[value] }}
+            {% endif %}            
+          {% endfor %}
+        json_attributes_path: "$[details][1]"
+        json_attributes:
+          - contents
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warninginfo&lang=en
+    sensor:
+      - name: "HKO - Weather Warning Info 2 - English"
+        unique_id: sensor.hko_weather_warning_info_2_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == "contents" %}
+              {{ value_json[value] }}
+            {% endif %}            
+          {% endfor %}
+        json_attributes_path: "$[details][2]"
+        json_attributes:
+          - contents
+
+  - resource: https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warninginfo&lang=en
+    sensor:
+      - name: "HKO - Weather Warning Info 3 - English"
+        unique_id: sensor.hko_weather_warning_info_3_en
+        value_template: >
+          {% for value in value_json %}
+            {% if value == "contents" %}
+              {{ value_json[value] }}
+            {% endif %}            
+          {% endfor %}
+        json_attributes_path: "$[details][3]"
+        json_attributes:
+          - contents

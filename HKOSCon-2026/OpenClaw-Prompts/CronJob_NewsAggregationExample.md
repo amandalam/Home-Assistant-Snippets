@@ -28,3 +28,5 @@
  url: "https://tinyurl.com/googlenews-hk-disney"
 }
 ```
+
+請務必確保所有日期、星期幾和時間數值等準確無誤地反映香港時區（UTC+8）的真實情況。

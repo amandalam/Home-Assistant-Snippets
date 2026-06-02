@@ -23,3 +23,5 @@ mcporter call home-assistant.get_history "entity_id":"sensor.flightradar24_curre
 {... 如此類推}
 
 分析：{你對呢啲航班飛過屋企上空嘅分析，包括估計航班起飛或降落香港國際機場嘅方向，爲何會經過此處等}
+
+請務必確保所有日期、星期幾和時間數值等準確無誤地反映香港時區（UTC+8）的真實情況。

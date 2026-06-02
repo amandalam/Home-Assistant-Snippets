@@ -10,6 +10,8 @@ mcporter call 'home-assistant.get_history("sensor.markdown_main_door_summary","{
 
 你將會獲得一串 JSON 結果顯示昨日所有影像轉變事件嘅分析，每一段都有 state 同 last_changed 值
 
+請務必確保所有日期、星期幾和時間數值等準確無誤地反映香港時區（UTC+8）的真實情況。
+
 請綜合你拎到嘅結果，將資訊以以下格式顯示：
 
 🔊 大門門鐘影像 每日分析報告 🔊

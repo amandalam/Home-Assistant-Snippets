@@ -30,7 +30,7 @@ This folder contains items I shared in [Hong Kong Open Source Conference 2026](h
 
 		The prompts (written in Traditional Chinese - Cantonese) are for creating a Security Camera analysis report, by retrieiving  the history values of the Main Door Summary Markdown field (change the markdown summary field name to yours).
 
-		**Pre-requisite:** You need to install the MQTT integration and create the Main Door Summary Mardown topic. You also need set up AI integration so that you have the AI Task set up to take prompts for further analysis; and an automation to start the analysis when someone passes by --- see [Automation_MainDoorAnalysisSummary.yaml](../Automation_MainDoorAnalysisSummary.yaml) for an example.
+		**Pre-requisite:** You need to install the MQTT integration and create the Main Door Summary Mardown topic. You also need set up AI integration so that you have the AI Task set up to take prompts for further analysis; and an automation to start the analysis when someone passes by --- see [Automation_MainDoorAnalysisSummary.yaml](Automation_MainDoorAnalysisSummary.yaml) for an example.
 
 	- [CronJob_NewsAggregationExample.md](OpenClaw-Prompts/CronJob_NewsAggregationExample.md):
 

@@ -3,6 +3,10 @@ This folder contains items I shared in [COSCUP 2026](https://coscup.org/2026/tra
 - [Presentation_Deck.pdf](Presentation_Deck.pdf): 
 
 	The slides I presented at the conference.
+	
+- [Presentation_Deck_Detail_Version.pdf](Presentation_Deck_Detail_Version.pdf): 
+
+	Detail version of the slides I originally prepared for the conference, before I was told that my session needs to be shrinked to 15 minutes.	
 
 - [Automation_MainDoorAnalysisSummary.yaml](Automation_MainDoorAnalysisSummary.yaml): 
 

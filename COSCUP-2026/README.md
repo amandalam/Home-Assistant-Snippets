@@ -11,6 +11,14 @@ This folder contains items I shared in [COSCUP 2026](https://coscup.org/2026/tra
 - [Automation_MainDoorAnalysisSummary.yaml](Automation_MainDoorAnalysisSummary.yaml): 
 
 	The automation example of taking a photo at the main door security camera and analyze it with Gemini, then push a notification to phone and update the MQTT topic summary field.
+	
+- [Podcast-en.m4a](Podcast-en.m4a):
+
+	A 2-person dialogue podcast in American English discussing the topic I shared in COSCUP 2026, generated with Google Gemini Notebook
+	
+- [Podcast-zh-tw.m4a](Podcast-zh-tw.m4a):
+
+	A 2-person dialogue podcast in Mandarin Chinese discussing the topic I shared in COSCUP 2026, generated with Google Gemini Notebook
 
 - [OpenClaw-Prompts/...](OpenClaw-Prompts/)
 

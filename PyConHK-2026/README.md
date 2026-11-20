@@ -14,7 +14,7 @@ This folder contains items I shared in [PyCon Hong Kong 2026](https://pretalx.co
 
 	Source ComfyUI file of the AI-rendered video, containing scene prompts, model settings and scene configurations.
 	
-- [AI-Video/Scene-FFLF-Pics](AI-Video/Scene-FF-LF-Pics/):
+- [AI-Video/Scene-FFLF-Pics/](AI-Video/Scene-FFLF-Pics/):
 
 	This sub-folder contains images generated with ChatGPT Images 2.6 for First Frame and Last Frame scene generation.
 

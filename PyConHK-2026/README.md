@@ -4,11 +4,11 @@ This folder contains items I shared in [PyCon Hong Kong 2026](https://pretalx.co
 
 	The slides I presented at the conference.
 
-- [https://drive.google.com/file/d/1RxacOXsEAAhUMTV4ttNMAYMw2sLC57Yj/view?usp=drive_link](AI-rendered video demonstrated in the talk): 
+- [AI-rendered video demonstrated in the talk](https://drive.google.com/file/d/1RxacOXsEAAhUMTV4ttNMAYMw2sLC57Yj/view?usp=drive_link): 
 
 	Original AI-rendered video, framing common problems of scattered smart home apps and ecosystems, cloud performance overheads, cloud privacy concerns, and service sustainability, into a one-minute short story. Spoken language in Cantonese. Generated locally using MiniMax H3 model in ComfyUI; upscaled to 4K using Topaz Video AI 5.5.1, using the Theia model.
 
-	[https://www.youtube.com/watch?v=7FOzO0RKLHM](The same video is also available in YouTube).
+	[The same video is also available in YouTube](https://www.youtube.com/watch?v=7FOzO0RKLHM).
 	
 - [AI-Video/Video_ComfyUI.json](AI-Video/Video_ComfyUI.json):
 
